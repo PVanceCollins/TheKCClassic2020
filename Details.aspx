@@ -7,6 +7,11 @@
         .btnDiv {
             padding: 15px 15px 15px 15px;
         }
+        .iconPic {
+            min-height: 310px;
+            min-width: 222px;
+            /*padding: 15px 15px 15px 15px;*/
+        }
 
     </style>
 </asp:Content>
@@ -15,69 +20,71 @@
         Additional Forms
     </div>
     <form id="form1" runat="server">
-        <div>
+
+         <div>
             <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnFlyer">Flyer</button>
-            </div>
-            <div class="col-md-8 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnSchedule">Schedule and Details</button>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnDivisions">Divisions</button>
-            </div>
-            <div class="col-md-8 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnRules">Rules</button>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnAthlete">Athlete Mail-in Form</button>
-            </div>
-            <div class="col-md-8 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnCoach">Coach Mail-in Form</button>
-            </div>
-<%--            <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnFood">Food</button>
-            </div>
-            <div class="col-md-8 col-sm-6 col-xs-12 btnDiv">
-                <button class="btn btn-primary" id="btnLodging">Lodging</button>
-            </div>--%>
+                <img src="images/flyer-blue.png" id="flyer" class="iconPic" />
+           </div>
+           <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
+                <img src="images/schedule-blue.png" id="schedule" class="iconPic" />
+           </div>
+           <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
+                <img src="images/divisions-blue.png" id="divisions" class="iconPic" />
+           </div>
+           <div class="col-md-4 col-sm-6 col-xs-12 btnDiv">
+                <img src="images/rules-blue.png" id="rules" class="iconPic" />
+           </div>
         </div>
+
+
     </form>
     <script>
         $(document).ready(function () {
+            $('.iconPic').mouseover(function () {
+                $(this).attr("src", $(this).attr("src").replace('blue', 'red'));
+            });
 
-            $('#btnFlyer').click(function () {
+            $('.iconPic').mouseleave(function () {
+                $(this).attr("src", $(this).attr("src").replace('red', 'blue'));
+            });
+            $('#flyer').click(function () {
                 window.open("/Flyer.pdf", '_blank');
                 return false;
             });
-            $('#btnSchedule').click(function () {
+            $('#schedule').click(function () {
                 window.open("/Schedule.pdf", '_blank');
                 return false;
             });
-            $('#btnDivisions').click(function () {
+            $('#divisions').click(function () {
                 window.open("/Divisions.pdf", '_blank');
                 return false;
             });
-            $('#btnRules').click(function () {
+            $('#rules').click(function () {
                 window.open("/Rules.pdf", '_blank');
                 return false;
             });
-            $('#btnAthlete').click(function () {
+            $('#athlete-mailin').click(function () {
                 window.open("/Athlete.pdf", '_blank');
                 return false;
             });
-            $('#btnCoach').click(function () {
+            $('#coach-mailin').click(function () {
                 window.open("/Coach.pdf", '_blank');
                 return false;
             });
-            $('#btnFood').click(function () {
-                window.open("/Food.pdf", '_blank');
+            $('#coach-mailin').click(function () {
+                window.open("/Coach.pdf", '_blank');
                 return false;
             });
-            $('#btnLodging').click(function () {
-                window.open("/Lodging.pdf", '_blank');
+            $('#coach-mailin').click(function () {
+                window.open("/Coach.pdf", '_blank');
                 return false;
             });
+
         });
+
+        function mOver(a) {
+
+        }
 
     </script>
 </asp:Content>
