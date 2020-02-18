@@ -1,0 +1,50 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Directions" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Directions.aspx.cs" Inherits="Directions"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div class="formPageHeader" style="width:900px">
+    Directions
+</div>
+<div style="width:900px; text-align:center;">
+    <div style="width:440px; text-align:center; position:absolute; top:80px; left:2px; border:solid 1px Navy">
+        <span style="font-size:x-large;">Tournament</span><br />
+        <span style="font-weight:bold">Delta Woods Middle School</span><br />4401 NE Lakewood Way<br />Lee's Summit, MO 64064<br /><br />
+        <div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.036192242587!2d-94.35594909999999!3d38.99167035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c11c2aebdd6247%3A0x5cf68fbaaf6efeee!2sDelta+Woods+Middle+School!5e0!3m2!1sen!2sus!4v1394484445790" width="400" height="300" frameborder="0" style="border:0"></iframe>
+        </div>
+    </div>
+
+      <div style="width:440px; text-align:center; position:absolute; top:80px; left:450px; border:solid 1px Navy">
+
+        <span style="font-size:x-large">Hotels</span><br />
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d99236.36605380088!2d-94.33570640469323!3d38.9893823421017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shotels!5e0!3m2!1sen!2sus!4v1430497836366" width="400" height="300" frameborder="0" style="border:0"></iframe>
+        </div> 
+    </div>
+
+    <%--<div style="width:440px; text-align:center; position:absolute; top:80px; left:450px; border:solid 1px Navy">
+
+        <span style="font-size:x-large">Hotels</span><br />
+        <span style="font-style:italic;">Mention The KC Classic for Group Rates</span><br />
+        <span style="font-weight:bold">Comfort Inn</span><br />3701 N.E. Ralph Powell Rd<br />Lees Summit, MO 64029 <br />
+        <div>
+
+           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3101.5849620427543!2d-94.35748!3d38.979144000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c11e62b6b34465%3A0x337ecd88609ebf4a!2s3701+NE+Ralph+Powell+Rd!5e0!3m2!1sen!2sus!4v1396317291001" width="400" height="300" frameborder="0" style="border:0"></iframe>
+        </div> 
+    </div>
+    <div style="width:440px; text-align:center; position:absolute; top:560px; left:225px; border:solid 1px Navy">
+
+        <span style="font-size:x-large">Hotel to Tournament</span><br />
+        <div>
+
+           <iframe src="https://www.google.com/maps/embed?pb=!1m29!1m12!1m3!1d6202.642000591252!2d-94.35707926659177!3d38.98516967597776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m14!1i0!3e6!4m5!1s0x87c11c2aebdd6247%3A0x5cf68fbaaf6efeee!2sDelta+Woods+Middle+School%2C+4401+NE+Lakewood+Way%2C+Lee&#39;s+Summit%2C+MO+64064!3m2!1d38.991626!2d-94.35498799999999!4m5!1s0x87c11e62b6b34465%3A0x337ecd88609ebf4a!2s3701+NE+Ralph+Powell+Rd%2C+Lee&#39;s+Summit%2C+MO+64064!3m2!1d38.979144!2d-94.35748!5e0!3m2!1sen!2sus!4v1396317520596" width="400" height="300" frameborder="0" style="border:0"></iframe>
+        </div> 
+    </div>--%>
+    <br />&nbsp;<br />&nbsp;<br />&nbsp;<br />&nbsp;<br />
+</div>
+</asp:Content>
+
+
+

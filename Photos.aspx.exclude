@@ -1,0 +1,18 @@
+﻿<%@ Page Language="C#"  Title="The KC Classic TaeKwonDo Championship - Photo Gallery" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Photos.aspx.cs" Inherits="Photos"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div class="formPageHeader" style="width:900px">
+    Photos
+</div>
+<div style="width:900px; text-align:center;">
+<object type="application/x-silverlight-2" data="data:application/x-silverlight-2," width="800" height="600"> 
+    <param name="background" value="black" /> 
+    <param name="source" value="Vertigo.SlideShow.xap" /> 
+    <param name="initParams" value="ConfigurationProvider=DarkTheme,DataProvider=XmlDataProvider;Path=Photos/Pictures.xml"/> 
+    <br /><br />
+</object>
+</div>
+</asp:Content>
+

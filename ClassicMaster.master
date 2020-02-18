@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ClassicMaster.master.cs" Inherits="ClassicMaster" %>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>The Kansas City Classic TaeKwonDo Tournament</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="/Content/site.css" rel="stylesheet"/>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+            html {
+              position: relative;
+              min-height: 100%;
+            }
+            body {
+              margin-bottom: 150px; /* Margin bottom by footer height */
+            }
+            .footer {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: 150px;  /* Set the fixed height of the footer here */
+              line-height: 80px; /* Vertically center the text there */
+              background-color: #f5f5f5;
+              margin-right: auto;
+              margin-left: auto;
+            }
+
+            .jumbotron {
+                padding-bottom: 10px;
+            }
+            .copyLine {
+                line-height: 0px;
+            }
+            .logoItemDiv {
+                margin-bottom: 10px;
+            }
+            .navbar-brand, .navbar-nav {
+                font-weight: 800;
+                color : #ffe6e6;
+            }
+
+            .navbar-inverse .navbar-nav > li > a{
+                color : #ffe6e6;
+            }
+
+            .navbar-inverse .navbar-brand  {
+                color : #ffe6e6;
+            }
+
+            .formPageHeader {
+                font-weight: 800;
+            }
+
+    </style>
+</head>
+<body>
+
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/Default.aspx">The KC Classic</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+<%--                                <li><a href="/Default.aspx">Home</a> </li>--%>
+                                <li><a href="/Register.aspx">Register</a></li>
+                                <li><a href="/Details.aspx">Details</a></li>
+                                <li><a href="/Cart2.aspx">Cart</a></li>
+            <%--                    <li><a href="/TestItem.aspx">Test</a></li>--%>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container body-content">
+
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    
+
+                </div>
+                        <footer class="footer ">
+                            
+                            <div  class="container hidden-xs">
+                                <hr />
+                                <div class="logoItemDiv hidden-sm col-md-1">&nbsp;</div>
+                                <div class="logoItemDiv col-sm-3 col-md-2">
+                                    <a href="http://wtf.org"><img src="images/WTF.gif" alt="WTF" width="147" height="72" border="0" /></a>
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <a href="http://ncta-usa.com"><img src="images/NCTA_clr_small.gif" alt="NCTA" border="0" /></a>
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <a href="http://www.aautaekwondo.org"><img src="images/aau3.gif" alt="AAU" width="66" height="65" border="0" /></a>
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <img src="images/KC_Classic_logo.gif" width="69" height="65" alt="Classic" />
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <img src="images/Barcelona_92.gif" width="70" height="70" alt="Barcelona_92" /> 
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <a href="http://www.gautreauxs.com"> <img src="images/g_logo.gif" alt="G" width="64" height="66" border="0" /></a>
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-1">
+                                    <img src="images/AMA_Logo_66x66.png" width="65" height="66" alt="AMA" />
+                                </div>
+                                <div class="logoItemDiv col-sm-3 col-md-2">
+                                    <a href="http://www.usa-taekwondo.us"><img src="images/USAtkd.gif" alt="USA TKD" width="137" height="58" border="0" /></a>
+                                </div>
+                                <div class="logoItemDiv hidden-sm col-md-1">&nbsp;</div>
+
+                            </div>
+                             <div class="col-sm-12 copyLine">
+                                    <p>&copy; 2020 - The KC Classic</p>
+                                </div>
+                        
+                    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js" ></script>
+</body>
+</html>

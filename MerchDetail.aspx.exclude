@@ -1,0 +1,10 @@
+<%@ Page Language="C#" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="MerchDetail.aspx.cs" Inherits="MerchDetail" Title="The KC Classic TaeKwonDo Championship - Merch Detail" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="formPageHeader">
+        Merchandise Detail
+    </div>
+    <img src="images/TShirtBig.png" alt="merch details" />
+</asp:Content>
+

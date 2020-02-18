@@ -1,0 +1,147 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using DataCommunicator;
+using System.Net;
+using System.Text;
+using System.IO;
+using Telerik.Web;
+using Telerik.Web.UI;
+using Telerik.Web.Design;
+
+public partial class Cart : System.Web.UI.Page
+{
+    protected String myItemID;
+    protected String myReturnValue;
+    protected Decimal runningTotal;
+    protected String myInvoiceID;
+    protected String myCustomValue;
+
+    protected virtual void OnPreInit(EventArgs e)
+    {
+        String x = Session["MySessionID"].ToString(); // not sure what I am using this for
+    }
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        runningTotal = 0;
+        //HttpUtility.UrlEncode(
+
+        myReturnValue = "<input type=\"hidden\" name=\"return\" value=\"http://thekcclassic.com/OrderComplete.aspx\" />";
+        Session.Add("amount", 1.0);
+        if (Session["currentGridItem"] != null)
+        {
+            Session["currentGridItem"] = -1;
+        }
+        else
+        {
+            Session.Add("currentGridItem", -1);
+        }
+
+        //myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + 1 + "\" />";
+        myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + runningTotal + "\" />";
+        grdCartItems.DataBind();
+        Session.Add("Payment_Amount", runningTotal);
+
+        // We are using session ID for the invoice Num
+        if (Session["MySessionID"] != null) // Sometimes if you reference a session key that does not exist it creates one with an empty string
+        {
+            if (Session["MySessionID"].ToString().Length < 5) // Session numbers are long
+            {
+                Session.Add("MySessionID", Session.SessionID);
+            }
+        }
+        else
+        {
+            Session.Add("MySessionID", Session.SessionID);
+        }
+        myInvoiceID = "<input type=\"hidden\" name=\"invoice\" value=\"" + Session["MySessionID"].ToString() + "\" />";
+        myCustomValue = "<input type=\"hidden\" name=\"custom\" value=\"" + Session["MySessionID"].ToString() + "\" />";
+    }
+  
+
+    protected void grdCartItems_ItemDataBound(object sender, Telerik.Web.UI.GridItemEventArgs e)
+    {
+        if (e.Item is GridDataItem)
+        {
+            GridDataItem dataItem = e.Item as GridDataItem;
+            Decimal fieldValue = Decimal.Parse(dataItem["cost"].Text);
+            runningTotal += fieldValue;
+        }
+        if (e.Item is GridFooterItem)
+        {
+            GridFooterItem footerItem = e.Item as GridFooterItem;
+            footerItem["cost"].Text = "Total: " + String.Format("{0:C}", runningTotal);
+            Session["amount"] = runningTotal;
+        }
+        //myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + 1 + "\" />";
+        myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + runningTotal + "\" />";
+        Session.Add("Payment_Amount", runningTotal);
+    }
+
+
+
+    protected void grdCartItems_SelectedIndexChanged(object sender, EventArgs e)  
+     {
+         //String g = grdCartItems.SelectedItems["CartID"]..ToString(); 
+        
+        var dataItem = grdCartItems.SelectedItems[0] as GridDataItem;  
+         if (dataItem != null)  
+         {
+             var cartID = dataItem["CartID"].Text;
+             Session.Add("CurrentCartItem", cartID);  
+         }  
+     } 
+
+
+
+    protected void grdCartItems_NeedDataSource(object source, GridNeedDataSourceEventArgs e)
+    {
+        grdCartItems.DataBind();
+    }
+
+    protected void grdCartItems_ItemCommand(object source, GridCommandEventArgs e)
+    {
+        if (e.CommandName.ToLower() == "delete")
+        {
+            //int ctID = e.Item.ItemIndex;
+
+            //GridDataItem gdiX = (GridDataItem)e.Item;
+            //object p = gdiX.GetDataKeyValue("cartID");
+            
+            grdCartItems.DataBind();
+        }
+    }
+    
+
+    protected void grdCartItems_ItemDeleted(object source, GridDeletedEventArgs e)
+    {
+
+
+        //var dataItem = grdCartItems.SelectedItems[0] as GridDataItem;
+        //if (dataItem != null)
+        //{
+        //    String id = dataItem["CartID"].Text;
+        //    Session["currentGridItem"] = int.Parse(id);
+        //    //Session.Add("CurrentCartItem", cartID);
+        //}
+        ////String id = e.Item.GetDataKeyValue("cartID").ToString();
+
+        //runningTotal = 0;
+        
+        
+        //sdsDB.Delete();
+        runningTotal = 0;
+    }
+}

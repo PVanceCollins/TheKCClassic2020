@@ -1,0 +1,19 @@
+﻿<%@ Page Language="C#"  Title="The KC Classic TaeKwonDo Championship - Video Gallery" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Videos.aspx.cs" Inherits="Videos" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div class="formPageHeader" style="width:900px">
+    Videos
+</div>
+<div style="width:900px; text-align:center;">
+<br /><br /><br /><span style="font-style:italic; font-size:x-large">Videos Coming Soon </span><br /><br /><br />
+Feel free to email the webmaster with links to your videos on YouTube or a similar service: 
+<a href="mailto:webmaster@thekcclassic.com">webmaster@thekcclassic.com</a>
+<br /><br />
+Less than 1MB in size please!
+
+</div>
+
+</asp:Content>
+

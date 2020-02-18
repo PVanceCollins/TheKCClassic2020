@@ -1,0 +1,148 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Athlete Registration" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Competitor.aspx.cs" Inherits="Competitor"  %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <br /><br /><br />
+    <div style="text-align:center;">
+        <asp:Table ID="tblFormElements" runat="server">
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label15" runat="server" Text="First Name" class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtFName" runat="server" Width="239px" EmptyMessage="First Name Required" EmptyMessageStyle-ForeColor="Red" eValidationGroup="validGroup"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label16" runat="server" Text="Last Name" class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtLName" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label17" runat="server" Text="Mailing Address"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="5"><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="txtAddress" runat="server" Width="720px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label18" runat="server" Text="City"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell><telerik:RadMaskedTextBox  MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtCity" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label19" runat="server" Text="State"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell HorizontalAlign="Left">    
+                    <telerik:RadComboBox ID="ddlStates" Runat="server" FocusedStyle-BorderColor="#F00000" >
+                        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+                    </telerik:RadComboBox>
+                </asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label20" runat="server" Text="Zip"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell><telerik:RadMaskedTextBox  Mask="#####-####" FocusedStyle-BorderColor="#F00000" ID="txtZip" runat="server" Width="70px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label21" runat="server" Text="Phone"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox Mask="(###) ###-####" FocusedStyle-BorderColor="#F00000" ID="txtPhone" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label  ID="Label22" runat="server" Text="Email Address"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox  MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="txtEmail" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label23" runat="server" Text="Rank"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell HorizontalAlign="Left">
+                    <telerik:RadComboBox ID="ddlRank" Runat="server" FocusedStyle-BorderColor="#F00000" >
+                        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+                        <Items>
+                            <telerik:RadComboBoxItem Text="N/A" Value="none" />
+                            <telerik:RadComboBoxItem Text="Junior/Tiger" Value="tot" />
+                            <telerik:RadComboBoxItem Text="White" Value="white" />
+                            <telerik:RadComboBoxItem Text="Yellow" Value="yellow" />
+                            <telerik:RadComboBoxItem Text="Gold" Value="gold" />
+                            <telerik:RadComboBoxItem Text="Orange" Value="orange" />
+                            <telerik:RadComboBoxItem Text="Green" Value="green" />
+                            <telerik:RadComboBoxItem Text="Blue" Value="blue" />
+                            <telerik:RadComboBoxItem Text="Purple" Value="purple" />
+                            <telerik:RadComboBoxItem Text="Brown" Value="brown" />
+                            <telerik:RadComboBoxItem Text="Red" Value="red" />
+                            <telerik:RadComboBoxItem Text="BB Recommended" Value="black" />
+                            <telerik:RadComboBoxItem Text="1st Dan" Value="dan1" />
+                            <telerik:RadComboBoxItem Text="2nd Dan or Higher" Value="dan2" />
+                        </Items>
+                    </telerik:RadComboBox>
+                </asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label24" runat="server" Text="Referee Certification Level"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="TextBox10" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label25" runat="server" Text="School"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox  MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox11" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label26" runat="server" Text="Instructor's Name"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="TextBox12" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label27" runat="server" Text="Instructor's Website"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox13" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label28" runat="server" Text="Instructor's Email"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox14" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </div>
+    <br /><br />
+
+    <div style="text-align:center;" class="enrollForm">
+        <asp:Table ID="tableEnroll" runat="server">
+            <asp:TableHeaderRow BackColor="DarkBlue" ForeColor="White" Font-Bold="true">
+                <asp:TableHeaderCell>Sparring</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Traditional Forms</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Open Forms</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Pre-Purchase</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell ><asp:CheckBox ID="sBB1832" runat="server" Text="Black Belt 18-32" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="tBB2Dan" runat="server" GroupName="grpTradForm" Text="2nd Dan or Higher" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="oBB2Dan" runat="server" GroupName="grpOpenForm" Text="2nd Dan or Higher" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="kidMeal" runat="server" GroupName="grpLunch" Text="Kid's Meal" /></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:CheckBox ID="sBB1417" runat="server" Text="Black Belt 14-17" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="tBB1Dan" runat="server" GroupName="grpTradForm"  Text="1st Dan" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="oBB1Dan" runat="server" GroupName="grpOpenForm" Text="1st Dan" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="RadioButton1" runat="server" GroupName="grpLunch" Text="Adult Meal" TextAlign="Right" /></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:CheckBox ID="sBB1333" runat="server" Text="Black Belt <14 or >32" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="tAdv" runat="server" GroupName="grpTradForm" Text="Brown/Red" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="oAdv" runat="server" GroupName="grpOpenForm" Text="Brown/Red" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:CheckBox ID="sAdv" runat="server" Text="Brown/Red" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="tInt" runat="server" GroupName="grpTradForm" Text="Green/Blue/Purple" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="oInt" runat="server" GroupName="grpOpenForm" Text="Green/Blue/Purple" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:CheckBox ID="chkTShirt" runat="server" Text="Tournament T-shirt" TextAlign="Right" /></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:CheckBox ID="sInt" runat="server" Text="Green/Blue/Purple" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="tBeg" runat="server" GroupName="grpTradForm" Text="White/Yellow/Gold/Orange" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell><asp:RadioButton ID="oBeg" runat="server" GroupName="grpOpenForm" Text="White/Yellow/Gold/Orange" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell HorizontalAlign="Left">
+                    <telerik:RadComboBox ID="ddlSize" Runat="server" >
+                        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+                        <Items>
+                            <telerik:RadComboBoxItem Text="Youth-Small" Value="ys" />
+                            <telerik:RadComboBoxItem Text="Youth-Medium" Value="ym" />
+                            <telerik:RadComboBoxItem Text="Youth-Large" Value="yl" />
+                            <telerik:RadComboBoxItem Text="Adult-Small" Value="s" />
+                            <telerik:RadComboBoxItem Text="Adult-Medium" Value="m" />
+                            <telerik:RadComboBoxItem Text="Adult-Large" Value="k" />
+                            <telerik:RadComboBoxItem Text="Adult-X-Large" Value="xl" />
+                            <telerik:RadComboBoxItem Text="Adult-XX-Large" Value="xxl" />
+                        </Items>
+                    </telerik:RadComboBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><asp:CheckBox ID="sBeg" runat="server" Text="White/Yellow/Gold/Orange" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell><asp:CheckBox ID="chkSpecialNeeds" runat="server" Text="Special Needs" TextAlign="Right" /></asp:TableCell>
+                <asp:TableCell>$15 Pre-purchase only</asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell><br /><asp:Button ID="btnSubmit" runat="server" Text="Add to Cart" /></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table> 
+    </div>
+</asp:Content>
+

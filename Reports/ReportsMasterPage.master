@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReportsMasterPage.master.cs" Inherits="Reports_ReportsMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table style="width: 100%;">
+            <tr>
+                <td style="width: 20%;"><a href="CompetitorReport.aspx">Competitors</a></td>
+                <td style="width: 20%;"><a href="CoachReport.aspx">Coaches</a></td>
+                <td style="width: 20%;"><a href="ShirtReport.aspx">T-Shirts</a></td>
+                <td style="width: 20%;"><a href="TicketReport.aspx">Tickets</a></td>
+                <td style="width: 20%;"><a href="RefereeReport.aspx">Referees</a></td>
+            </tr>
+        </table>
+        <hr />
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

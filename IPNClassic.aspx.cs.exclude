@@ -1,0 +1,85 @@
+﻿using System;
+using System.IO;
+using System.Text;
+using System.Net;
+using System.Web;
+using System.Data;
+using System.Data.SqlClient;
+
+public partial class IPNClassic : System.Web.UI.Page
+{
+    private static string conStr = System.Configuration.ConfigurationManager.ConnectionStrings["gforcetkdConnectionString1"].ConnectionString;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //Post back to either sandbox or live
+        string strSandbox = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+        string strLive = "https://www.paypal.com/cgi-bin/webscr";
+        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(strLive);
+
+        //Set values for the request back
+        req.Method = "POST";
+        req.ContentType = "application/x-www-form-urlencoded";
+        byte[] param = Request.BinaryRead(HttpContext.Current.Request.ContentLength);
+        string strRequest = Encoding.ASCII.GetString(param);
+        strRequest += "&cmd=_notify-validate";
+        req.ContentLength = strRequest.Length;
+
+        //Send the request to PayPal and get the response
+        StreamWriter streamOut = new StreamWriter(req.GetRequestStream(), System.Text.Encoding.ASCII);
+        streamOut.Write(strRequest);
+        streamOut.Close();
+        StreamReader streamIn = new StreamReader(req.GetResponse().GetResponseStream());
+        string strResponse = streamIn.ReadToEnd();
+        streamIn.Close();
+
+        if (strResponse == "VERIFIED")
+        {
+            string invoiceID = Request.QueryString["custom"].ToString();
+            updateDatabase(invoiceID);
+
+            //check the payment_status is Completed
+            //check that txn_id has not been previously processed
+            //check that receiver_email is your Primary PayPal email
+            //check that payment_amount/payment_currency are correct
+            //process payment
+        }
+        else if (strResponse == "INVALID")
+        {
+            //log for manual investigation
+        }
+        else
+        {
+            //log response/ipn data for manual investigation
+        }
+    }
+
+    protected void updateDatabase(string myInvoiceID)
+    {
+        String cmdStr = "usp_UpdatePayment";
+        SqlParameter prm1 = new SqlParameter("pb", "PP");
+        SqlParameter prm2 = new SqlParameter("po", DateTime.Now);
+        SqlParameter prm3 = new SqlParameter("si", myInvoiceID);
+        try
+        {
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand(cmdStr, con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(prm1);
+                    cmd.Parameters.Add(prm2);
+                    cmd.Parameters.Add(prm3);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+}
+
+

@@ -1,0 +1,1 @@
+﻿I lost the DataCommunictor project. Do not delete the existing one from the bin.

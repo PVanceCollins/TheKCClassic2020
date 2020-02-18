@@ -1,0 +1,10 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Enrollment Confirmation" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="confirm.aspx.cs" Inherits="confirm"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:TextBox ID="txtResults" runat="server" ReadOnly="True" 
+        TextMode="MultiLine" BorderStyle="Solid" BorderColor="#000066" 
+        BorderWidth="1px" Text="N/A" Height="270px" Width="889px"></asp:TextBox>
+</asp:Content>
+

@@ -1,0 +1,65 @@
+﻿<%--       <%--    
+    return 
+ Optional
+ The URL to which the payer’s browser is redirected after completing the payment; for example, a URL on your site that displays a “Thank you for your payment” page. 
+
+Default – The browser is redirected to a PayPal web page.
+ 1,024
+ 
+rm 
+ Optional
+ Return method. The FORM METHOD used to send data to the URL specified by the return variable after payment completion. Allowable values:
+
+0 – all shopping cart transactions use the GET method
+1 – the payer’s browser is redirected to the return URL by the GET method, and no transaction variables are sent
+2 – the payer’s browser is redirected to the return URL by the POST method, and all transaction variables are also posted
+The default is 0. 
+
+Note: The rm variable takes effect only if the return variable is also set.  
+ 
+--%>
+    
+    
+    
+    
+<%--    <input type="hidden" name="cmd" value="_xclick" />
+    <input type="hidden" name="currency_code" value="USD" />
+    <input type="hidden" name="lc" value="US" />
+    <input type="hidden" name="business" value="info@thekcclassic.com" />
+    <input type="hidden" name="item_name" value="KC_Classic_Registration" />
+    <input type="hidden" name="item_number" value="2011" />
+    <input type="hidden" name="lc" value="US" />
+    <input type="hidden" name="paymentaction" value="sale" />
+    <input type="hidden" name="rm" value="2" />
+    <input type="hidden" name="notify_url" value="http://thekcclassic.com/IPNClassic.aspx" />
+    
+    
+    
+    <%= myItemID  %>
+    <%= myReturnValue %>
+    <%= myInvoiceID %>
+    <%= myCustomValue %>--%>
+
+
+	11610283
+
+<%--    <br />
+    <table width="705px">
+    <tr>
+    <td style="width:320px; font-size:14px;">In order to ensure the online security of our customers you will be directed to a secure page hosted by PayPal. It is not necessary to have a PayPal account to 
+        pay with a credit card.</td>
+    <td style="text-align:center; vertical-align:top; width: 390px;">
+    
+        <asp:imagebutton id="btnSubmitPaypal" runat="server" imageurl="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alternatetext="Purchase Using Paypal"
+        postbackurl="https://www.paypal.com/cgi-bin/webscr" />
+        
+<%--        <asp:imagebutton id="btnSubmitPaypal" runat="server" imageurl="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alternatetext="Purchase Using Paypal"
+        postbackurl="expresscheckout.aspx"   />--%>
+        
+        
+<%--        <form action='expresscheckout.aspx' METHOD='POST'>
+<input type='image' name='submit' src='https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif' border='0' align='top' alt='PayPal'/>
+</form>
+    </td>
+    </tr>
+    </table>--%>--%>

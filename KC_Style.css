@@ -1,0 +1,208 @@
+﻿body 
+{
+	background-color:#F5F5F5;
+	background-image:url("./images/yinyan_bg.jpg");
+	background-repeat:repeat;
+	font: normal 13px "Segoe UI", "Myriad Pro", Arial, sans-serif;
+}
+
+#mainBackground
+{
+	position:absolute;
+	top:5px;
+	left:5px;
+	z-index:10;
+}
+
+#mainText
+{
+	font-family: "Segoe UI", "Myriad Pro", Arial, Helvetica, Sans-Serif;
+	color:#383838;
+	z-index:50;
+	position:absolute;
+	/*left:300px;*/
+	top:275px;
+}
+
+
+
+.RadMenu_Black 
+{
+	background: #1e1e1e;
+}
+
+.RadMenu
+{
+	white-space:nowrap;
+	float:left;
+	position:relative;
+	left: 0px;
+	top: -1px;
+}
+
+.RadMenu ul.rmRootGroup
+{
+	display:block;
+}
+
+.RadMenu_Black .rmHorizontal
+{
+	height: 33px;
+	background: #383838 url(mvwres://Telerik.Web.UI, Version=2008.3.1314.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4/Telerik.Web.UI.Skins.Black.Menu.Background.gif) repeat-x top left
+}
+
+.RadMenu .rmRootGroup
+{
+	margin:0;
+	padding:0;
+	position:relative;
+	left:0;
+	display: inline-block;
+}
+
+.RadMenu .rmHorizontal .rmItem
+{
+	clear:none;
+}
+
+.RadMenu .rmItem
+{
+	float:left;
+	position:relative;
+	list-style-image: none;
+	list-style-position:outside;
+	list-style:none;	
+}
+
+.RadMenu_Black .rmRootGroup .rmLink
+{
+	margin-right: 0px;
+	overflow: visible;
+}
+
+.RadMenu a.rmLink
+{
+	cursor:default;
+	display:block;	
+}
+
+
+.RadMenu_Black .rmLink
+{
+	font: normal 14px/25px "Segoe UI", "Myriad Pro", Arial, sans-serif;
+	text-decoration: none;
+	color: #9f9f9f;
+	padding-left:3px;
+	text-align:left;
+}
+
+.RadMenu .rmLink
+{
+	width:auto;
+}
+
+.RadMenu_Black a
+{
+	text-decoration: none;
+}
+
+.RadMenu_Black .rmRootGroup .rmLink .rmText
+{
+	margin-right:-1px;
+}
+
+.RadMenu_Black .rmText
+{
+	padding: 2px 5px 0;
+}
+
+.RadMenu .rmText
+{
+	display:block;
+}
+
+.formLabel
+{
+	text-align:right;
+	vertical-align:middle;
+}
+
+.formContent
+{
+	text-align:left;
+	vertical-align:middle;
+}
+.formRow
+{
+	padding-top:10px;
+}
+
+.formPageHeader
+{
+	font-size:xx-large;
+	color:#F00000;
+	font-weight:bold;
+	text-align:center;
+	padding-bottom: 20px;
+}
+
+.formWaiver
+{
+	padding:15px 10 px 10 px 10 px
+	font-style:italic;
+	width:898px;
+	font-size:small;
+	text-align:center;
+	border: solid 1px black;
+	background-color:#F5F5F5;
+}
+
+.formWaiverHeader
+{
+	font-weight:bold;
+	font-size:medium;
+}
+
+.formAgreeLine
+{
+	font-weight:bold;
+	text-align:left;
+	padding-left:25px;
+}
+
+.formWaiverText
+{
+	text-align:left;
+	width:829px;
+
+}
+
+.frontPageItems
+{
+	text-align:center; 
+	position:absolute; 
+	color:#383838;
+    width:898px; 
+    left: 0px;
+    font: normal 30px "Segoe UI", "Myriad Pro", Arial, sans-serif;
+	text-decoration: none;
+}
+	
+
+.enrollForm
+{
+	
+	border-spacing: 0px;
+}
+
+.enrollForm table tr td
+{
+
+	text-align:left;
+	padding: 5px 15px 5px 15px;
+
+}
+
+
+
+

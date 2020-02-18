@@ -1,0 +1,45 @@
+﻿CONTEXT X3-7SZn2ExXucINxlliZ_05NdFsrIIpaV9TcRYNLL_GiOwm9XgEZzWKQeV0 
+myAllTextSubmitID  
+cmd _flow 
+mc_gross 1.00 
+invoice ci5rua5502k3ff55os4hzi45 
+protection_eligibility Eligible 
+address_status confirmed 
+payer_id 5B4K5JKTS9DEN 
+tax 0.00 
+address_street 1613 NE Stonewood Dr 
+payment_date 11:07:10 Mar 19, 2011 PDT 
+payment_status Completed 
+charset windows-1252 
+address_zip 64086 
+first_name Kelly 
+mc_fee 0.33 
+address_country_code US 
+address_name Kelly Collins 
+notify_version 3.1 
+custom  
+payer_status unverified 
+business info@thekcclassic.com 
+address_country United States 
+address_city Lees Summit 
+quantity 1 
+payer_email thevanceman@yahoo.com 
+verify_sign AQU0e5vuZCvSg-XJploSa.sGUDlpADmY.Hu7YA2iCPyruyqEpEIZFHFb 
+txn_id 9N750980S0718422M 
+payment_type instant 
+last_name Collins 
+address_state MO 
+receiver_email info@ocean-condo.com 
+payment_fee 0.33 
+receiver_id 4AAD6JKUVWEP2 
+txn_type web_accept 
+item_name KC_Classic_Registration 
+mc_currency USD 
+item_number 2011 
+residence_country US 
+receipt_id 0524-9906-7439-3615 
+transaction_subject KC_Classic_Registration 
+handling_amount 0.00 
+payment_gross 1.00 
+shipping 0.00 
+form_charset UTF-8 

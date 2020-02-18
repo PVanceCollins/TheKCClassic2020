@@ -1,0 +1,26 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Contact Info" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<div class="formPageHeader">
+        Contact Information
+    </div>
+    <div style="width:850px; text-align:left; left:200px;"><span style="font-size:large;">
+        The KC Classic<br />
+        c/o Gautreaux’s Martial Arts Center<br /> 
+        2905 SW US Highway 40 <br />
+        Blue Springs, MO 64015 <br />
+        <br />
+        816.229.6611
+        <br /><br />
+        <a href="mailto:info@thekcclassic.com">info@thekcclassic.com</a>
+        <br /><br /><br />
+        For website concerns please contact: <a href="mailto:webmaster@thekcclassic.com">
+        webmaster@thekcclassic.com</a></span></div>
+    
+    
+
+</asp:Content>
+

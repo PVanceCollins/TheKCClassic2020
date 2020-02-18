@@ -1,0 +1,81 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Hotel Info" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Hotel.aspx.cs" Inherits="Hotel"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<style type="text/css">
+   .hotelHeader
+   {
+   	font-weight:bold;
+   }
+</style>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div style="width:895px; font-size:14px;">
+
+<div style="font-size:40px; text-align:center; color:#383838;">Headquarters Hotel</div>
+<br />
+The headquarter hotel is the Hilton Garden Inn, 19677 East Jackson Drive, Independence, MO 64057 
+1.800.445.8667, 816.350.3000, $95.00 per night, one king or two double beds. Call and mention 
+Kansas City Classic Taekwondo for the room discount or go to <a href="http://www.hiltongardeninn.com">www.hiltongardeninn.com</a>, find the property by 
+ the above hotel address, click Book a Room, enter the group code# KCC. The Hilton Garden Inn is located close to the Championship Venue and Gautreaux’s Martial Arts Center. It is a very nice hotel with several restaurants next door and a shopping mall a couple blocks away.
+<br />
+<hr />
+<br />
+<span class="hotelHeader">Our Hotel	</span><br />
+The Hilton Garden Inn Independence hotel in Missouri is at your service. For the Missouri traveler and the busy executive we are certain to please with our amenities. Each guestroom in the Hilton Garden Inn Independence hotel has a hospitality center with in-room microwave and refrigerator. For 24-hour service, shop in our convenience mart. For all your business needs we offer a 24-hour business center, complimentary high-speed internet and a large work space. 
+<br /><br />
+Pleasurable pursuits come easily in Independence, Missouri with our proximity to retail, restaurants, Kansas City Chiefs/Royals Stadiums, the Harry S. Truman Library/Museum, casinos and more nearby attractions. Hilton Garden Inn Independence hotel in Missouri is first class providing ultimate service. The Hilton Garden Inn Independence hotel is awaiting your arrival with our breathtaking landscaping with fountain, the beautifully decorated lobby with hand-picked artwork, fireplace and Brazilian slate flooring. 
+<br /><br />
+The Hilton Garden Inn Independence hotel in Missouri offers 11,000 square feet of beautiful banquet space that accommodates up to 1,400 people. This Hilton Garden Inn hotel in Missouri specializes in corporate meetings, family and class reunions, and wedding receptions. We are pleased to provide you with catering from The Hereford House. The Hilton Garden Inn Independence hotel offers the Great American Grill® serving freshly prepared breakfasts and the award winning Hereford House Restaurant for lunch and dinner. The Pavilion Pantry has a selection of refrigerated, frozen and microwaveable packaged items perfect for in-room preparation. 
+<br /><br />
+The Hilton Garden Inn Independence hotel is ready when you are for after work relaxation or some fun during a weekend getaway. This Missouri Hilton Garden Inn has an indoor pool and fitness center available. Within a one mile radius of the Hilton Garden Inn Independence hotel are over 200 shops, restaurants and a large movie theatre complex. 
+
+<table border="0" cellspacing="30px">
+    <tr>
+        <td valign="top">
+            <span class="hotelHeader">Guest Accommodations	</span>
+            <ul>
+                <li>One King or 2 Double Beds</li>
+                <li>Chair with ottoman</li>
+                <li>Large work desk</li>
+                <li>2 phones - each with 2 lines </li>
+                <li>Data port and voicemail</li>
+                <li>Refrigerator</li>
+                <li>Microwave</li>
+                <li>Coffeemaker</li>
+                <li>Iron and ironing board. </li>
+            </ul>
+        </td>
+        <td valign="top">
+            <span class="hotelHeader">Features & Highlights</span>
+             <ul>
+                <li>Evening room service</li>
+                <li>Complimentary 24-hr Business Center</li>
+                <li>Complimentary high-speed Internet</li>
+                <li>24hr Pavilion Pantry stocked with snacks, drinks & everything you forgot</li>
+            </ul>
+        </td>
+        <td valign="top">
+            <span class="hotelHeader">Hotel Policies</span>
+            <ul>
+                <li>Check-In: 3:00PM - Check-Out: 12:00PM</li>
+                <li>Self Parking: No Charge </li>
+                <li>Pets: No Pets Allowed</li>
+            </ul>
+        </td>
+    </tr>
+
+</table>
+    <div style="text-align:center;">
+        <img src="images/MCIINGI_Hilton_Garden_Inn_Independence_home_left.jpg" alt="hotel1" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="images/MCIINGI_Hilton_Garden_Inn_Independence_home_right.jpg" alt="hotel1" />
+    </div>
+<br />
+
+
+</div>
+
+
+</asp:Content>
+

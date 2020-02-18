@@ -1,0 +1,342 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Spectator" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Spectator.aspx.cs" Inherits="Spectator" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+    td
+    {
+    	padding-top: 10px;
+    	padding-left: 5px;
+    	padding-right: 2px;
+    }
+    .itemDescr
+    {
+    	text-align:left;
+    	padding-left: 10px;
+    }
+    .itemPrice
+    {
+    	text-align:right;
+    	padding-right: 12px;
+    }
+    .itemQty
+    {
+    	text-align:center;
+    }
+    .buffer
+    {
+    	padding-left:10px;
+    	padding-right:10px;
+    	padding-top:5px;
+    	padding-bottom:5px;
+    }
+    .largeText
+    {
+    	 font-size:medium;
+    }
+
+ p.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+
+   <div style="width:900px; text-align:center;"><span style="font-size:large;">
+        SAVE $$$ PRE-REGISTER by April 13th
+        <br />
+        ADVANCED SPECTATOR TICKETS - VIP PICK UP
+        <br />
+        NEW CHAMPIONSHIP T-SHIRT DESIGN, ADVANCE PURCHASE ONLY</span>
+       <br />
+       <p class="MsoNormal">
+           <i style="mso-bidi-font-style:normal">
+           <span style="font-size:12.0pt;line-height:115%">To make your experience at the 
+           Classic easier and more convenient, you may purchase your spectator tickets in advance.
+           Don’t forget about the championship T-Shirt, this can only be purchased in advance (VERY limited number available at the tournament). 
+           You can simply purchase everything in advance when you register yourself or your  
+           athlete and it will be waiting for your arrival.</span></i></p>
+       <br />
+    </div>
+    <div style="text-align:center; padding-top:25px; width:890px;" >
+        <asp:ValidationSummary ID="valSummary" runat="server" ValidationGroup="validGroup" />
+        <asp:Table ID="tblFormElements" runat="server">
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel" Width="170px"><asp:Label ID="Label15" runat="server" Text="First Name" class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell CssClass="formContent" Width="237px"><telerik:RadTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtFName" runat="server" Width="175px" 
+                            EmptyMessage="*" EmptyMessageStyle-ForeColor="Red" ValidationGroup="validGroup" Enabled="true"></telerik:RadTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel" Width="208px"><asp:Label ID="Label16" runat="server" Text="Last Name" class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell CssClass="formContent" Width="237px"><telerik:RadTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtLName" runat="server" Width="175px"
+                            EmptyMessage="*" EmptyMessageStyle-ForeColor="Red" ValidationGroup="validGroup" Enabled="true"></telerik:RadTextBox></asp:TableCell>
+
+                <asp:TableCell CssClass="formLabel" Width="170px"><asp:Label ID="Label2" runat="server" Text="Email" class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell CssClass="formContent" Width="237px"><telerik:RadTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtEmail" runat="server" Width="175px" 
+                    EmptyMessage="*" EmptyMessageStyle-ForeColor="Red" ValidationGroup="validGroup" Enabled="true"></telerik:RadTextBox></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <br /><br />
+        <asp:Table ID="Table2" runat="server">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <a href="MerchDetail.aspx"><img src="images/TShirtMed.png" alt="Tournament Shirt" /></a>
+                </asp:TableCell>
+                <asp:TableCell RowSpan="2">
+                    <asp:Table ID="Table1" runat="server" CssClass="largeText">
+            <asp:TableHeaderRow BackColor="#1e1e1e" ForeColor="#9f9f9f">
+                <asp:TableHeaderCell Width="150px">Item</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="50px" CssClass="buffer">Price</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="50px" CssClass="buffer">Quantity</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr"><span style="font-weight:bold;">Spectator Ticket&nbsp;&nbsp;&nbsp;(13+)</span></asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$10</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtAdultTix" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr"><span style="font-weight:bold;">Youth Spectator Ticket&nbsp;&nbsp;&nbsp;(6-12)</span></asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$8</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtKidTix" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Adult Meal<br /><span style="font-style:italic; font-size:small;">Turkey sandwich, fruit, chips, bottled water</span></asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$6</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtAdultMeal" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Youth Meal<br /><span style="font-style:italic; font-size:small;">Hot dog, chips, bottled water</span></asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$4</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtKidMeal" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Youth Small</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTys" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Youth Small</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTysB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Youth Medium</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTym" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Youth Medium</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTymB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Youth Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTyl" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Youth Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTylB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Adult Small</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTs" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Adult Small</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTsB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Adult Medium</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTm" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Adult Medium</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTmB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Adult Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTl" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Adult Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTlB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Adult X-Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTxl" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Adult X-Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$15</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTxlB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">T-Shirt - Adult XX-Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$18</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTxxl" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+<%--            <asp:TableRow>
+                <asp:TableCell CssClass="itemDescr">Black T-Shirt - Adult XX-Large</asp:TableCell>
+                <asp:TableCell CssClass="itemPrice">$23</asp:TableCell>
+                <asp:TableCell CssClass="itemQty">
+                    <telerik:RadNumericTextBox ID="txtTxxlB" runat="server" MinValue="0" MaxValue="25" FocusedStyle-BorderColor="Red" EmptyMessage="0" MaxLength="2" Width="25px">
+                    </telerik:RadNumericTextBox>
+                </asp:TableCell>
+            </asp:TableRow>--%>
+        </asp:Table>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <img src="images/TicketSmallTrans.gif" alt="Tickets" />
+                </asp:TableCell>
+            </asp:TableRow>
+          
+        </asp:Table>
+        
+        
+        
+    </div>
+    
+    <br /><br />
+    <div class="formWaiver">
+        <div class="formWaiverHeader">Liability Waiver and Conduct Agreement
+        </div>
+        <div class="formWaiverText">
+                In consideration of your acceptance of my entry, I do hereby WAIVE and RELEASE, for myself, my heirs, executors and
+                administrators, any claim I may make against the Kansas City Classic Taekwondo Championships, Gautreaux’s Martial Art Centers, Inc, ACTS, Blue Springs South High School, 
+                Blue Springs R IV School District, the City of Blue Springs, the sponsors, directors, volunteers and competitors for any and all damages which may be sustained by me in 
+                connection with my association with or entry in the above athletic meet, or which may arise out of traveling to, participating in and returning from this athletic meet. 
+                I understand that Taekwondo is a body-contact sport which involves a risk of injury. I understand all the contents of the rules and general information published by the
+                 sponsors and I agree with them in their entirety. I fully understand that any medical treatment I receive will be of the “first Aid” type only. In addition, I consent 
+                 that any pictures taken of me in connection with this event can be used for publicity, etc. and I waive compensation in regard hereto.
+                 <br /><br />
+
+                I agree to cooperate with all Kansas City Classic staff, officials and security personnel at all times. 
+            
+            <span style="font-weight:bold">I understand that the competition floor is for competitors and coaches only and that they must leave the floor as soon as their competition has completed.</span>
+            <br /><br />
+        </div>
+    </div>
+    <div class="formAgreeLine">
+        <br />
+        <asp:Label ID="Label3" runat="server" CssClass="formAgreeLine" Text="I state that by submitting this form I agree to the considerations above:"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnSubmit" runat="server" Text="Add Items to Cart" 
+                    onclick="btnSubmit_Click" UseSubmitBehavior="False" />
+
+        <br />
+        <br />
+
+
+    </div>
+<!-- #########################   Validators  ################################-->
+    <asp:RegularExpressionValidator
+        ID="emailValidator"
+        runat="server"
+        Display="None"
+        ErrorMessage="Please enter valid e-mail address."
+        SetFocusOnError="True"
+        ValidationGroup="validGroup"
+        ValidationExpression="^[\w\.\-]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]{1,})*(\.[a-zA-Z]{2,3}){1,2}$"
+        ControlToValidate="txtEmail"> </asp:RegularExpressionValidator>
+    <asp:RequiredFieldValidator 
+        ID="RequiredFieldValidator3" 
+        runat="server" 
+        ErrorMessage="Please enter a valid e-mail address"
+        ValidationGroup="validGroup" 
+        ControlToValidate="txtEmail" 
+        SetFocusOnError="True" 
+        Display="None"> </asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator 
+        ID="RequiredFieldValidator1" 
+        runat="server" 
+        ErrorMessage="Please enter a valid first name"
+        ValidationGroup="validGroup" 
+        ControlToValidate="txtFName" 
+        SetFocusOnError="True" 
+        Display="None"> </asp:RequiredFieldValidator>
+    <asp:RequiredFieldValidator 
+        ID="RequiredFieldValidator2" 
+        runat="server" 
+        ErrorMessage="Please enter a valid last name"
+        ValidationGroup="validGroup" 
+        ControlToValidate="txtLName" 
+        SetFocusOnError="True" 
+        Display="None"> </asp:RequiredFieldValidator>
+
+    <!-- #########################  END  Validators  ################################-->
+    <asp:HiddenField ID="hdnContactID" runat="server" />
+    <asp:HiddenField ID="hdnEventID" runat="server" />
+</asp:Content>
+

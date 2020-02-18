@@ -1,0 +1,103 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using Telerik.Web;
+using Telerik.Web.UI;
+using Telerik.Web.Design;
+
+public partial class OrderComplete : System.Web.UI.Page
+{
+    protected String myPostData;
+    protected String myRegistrationType;
+    protected String myName;
+    protected String myCityStateZip;
+    protected String myPayPalReceiptNumber;
+    protected String myReceiptDate;
+    protected String myInvoiceID;
+    protected String myAddress;
+    private static string conStr = ConfigurationManager.ConnectionStrings["gforcetkdConnectionString1"].ConnectionString;
+
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        //Form Values 
+        System.Collections.Specialized.NameValueCollection nvc = Request.Form;
+        myRegistrationType = "<h2>" + nvc["item_number"].ToString() + " " + nvc["item_name"].ToString() + "</h2>";
+        myInvoiceID = "<h2>Invoice ID: " + nvc["invoice"].ToString().Substring(8) + "</h2>";
+        Session["MySessionID"] = nvc["invoice"].ToString();
+        myName = nvc["address_name"].ToString();
+        myCityStateZip = nvc["address_city"].ToString() + ", " + nvc["address_state"].ToString() + "  " + nvc["address_zip"].ToString();
+        myAddress = nvc["address_street"].ToString();
+        myPayPalReceiptNumber = nvc["receipt_id"].ToString();
+        myReceiptDate = DateTime.Today.ToShortDateString();
+
+        grdCartItems.DataBind();
+        
+    }
+
+    protected void updateDatabase()
+    {
+        // we are doing this in tbhe IPN Classic page now
+
+        //String cmdStr = "usp_UpdatePayment";
+        //SqlParameter prm1 = new SqlParameter("pb", "PP");
+        //SqlParameter prm2 = new SqlParameter("po", DateTime.Now);
+        //SqlParameter prm3 = new SqlParameter("si", myInvoiceID);
+        //try
+        //{
+        //    using (SqlConnection con = new SqlConnection(conStr))
+        //    {
+        //        using (SqlCommand cmd = new SqlCommand(cmdStr, con))
+        //        {
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.Add(prm1);
+        //            cmd.Parameters.Add(prm2);
+        //            cmd.Parameters.Add(prm3);
+        //            con.Open();
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //    }
+        //}
+        //catch (Exception ex)
+        //{
+        //    lblError.Text = ex.Message;
+        //    lblError.Visible = true;
+        //}
+    }
+
+    //protected void grdCartItems_ItemDataBound(object sender, Telerik.Web.UI.GridItemEventArgs e)
+    //{
+    //    //if (e.Item is GridDataItem)
+    //    //{
+    //    //    GridDataItem dataItem = e.Item as GridDataItem;
+    //    //    Decimal fieldValue = Decimal.Parse(dataItem["cost"].Text);
+    //    //    runningTotal += fieldValue;
+    //    //}
+    //    //if (e.Item is GridFooterItem)
+    //    //{
+    //    //    GridFooterItem footerItem = e.Item as GridFooterItem;
+    //    //    footerItem["cost"].Text = "Total: " + String.Format("{0:C}", runningTotal);
+    //    //    Session["amount"] = runningTotal;
+    //    //}
+    //    ////myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + 1 + "\" />";
+    //    //myItemID = "<input type=\"hidden\" ID=\"amount\" name=\"" + "amount" + "\" value=\"" + runningTotal + "\" />";
+    //    //Session.Add("Payment_Amount", runningTotal);
+    //}
+
+
+    //protected void grdCartItems_NeedDataSource(object source, GridNeedDataSourceEventArgs e)
+    //{
+    //    grdCartItems.DataBind();
+    //}
+
+
+}

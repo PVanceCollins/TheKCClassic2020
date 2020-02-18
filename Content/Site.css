@@ -1,0 +1,72 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.form-radio-group {
+    max-width: 280px;
+}
+
+
+.pager a {
+    color: #eeeeee;
+}
+
+
+.pager {
+    padding-left: 0;
+    margin: 18px 0;
+    list-style: none;
+    text-align: center;
+}
+
+
+
+.pager li {
+    display: inline;
+}
+
+.pager li > a,
+.pager li > span {
+display: inline-block;
+padding: 5px 14px;
+background-color: #ff0000;
+border: 1px solid #ffffff;
+border-radius: 15px;
+}
+
+.pager li > a:focus,
+.pager .active > a {
+    text-decoration: none;
+    background-color: #ff0000;
+    border: 1px solid #ffffff;
+}
+
+.pager li > a:hover {
+    text-decoration: none;
+    background-color: #cc0000;
+    border: 3px solid #bbbbbb;
+    color: #ffffff;
+}
+
+
+.error {
+    color: red;
+}
+
+.formPageHeader {
+    font-weight: 800;
+}

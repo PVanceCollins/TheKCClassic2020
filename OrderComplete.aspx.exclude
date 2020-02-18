@@ -1,0 +1,89 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="OrderComplete.aspx.cs" Inherits="OrderComplete" Title="Untitled Page" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<%= myRegistrationType  %>
+<%= myInvoiceID  %>
+<br /><br />
+<p><span style="font-size:larger; font-weight:bold;">Thank you for your payment. <br />Your transaction has been completed, and a receipt for your purchase has been emailed to the address you provided.<br /><br />Please print this receipt for your records and bring it to the tournament with you to expedite check in.</span></p>
+<table>
+    <tr>
+        <td>Name</td>
+        <td><%= myName  %></td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td><%= myAddress  %></td>
+    </tr>
+    <tr>
+        <td>City,State, Zip</td>
+        <td><%= myCityStateZip  %></td>
+    </tr>
+    <tr>
+        <td>PayPal Receipt Number:</td>
+        <td><%= myPayPalReceiptNumber  %></td>
+    </tr>
+    <tr>
+        <td>PayPal Receipt Date:</td>
+        <td><%= myReceiptDate  %></td>
+    </tr>
+</table>
+<br /><br />
+
+        <%--
+        These were in the radgrid list
+        OnItemDataBound="grdCartItems_ItemDataBound"  
+        OnNeedDataSource="grdCartItems_NeedDataSource"--%>
+    <telerik:RadGrid 
+        ID="grdCartItems" 
+        runat="server" 
+        BorderColor="Black" 
+        BorderWidth="1px"  
+        GridLines="Horizontal" 
+        DataSourceID="sdsDB" 
+        Width="775px" 
+        AutoGenerateColumns="False"
+        DataMember="DefaultView">
+        <HeaderContextMenu>
+        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+        </HeaderContextMenu>
+
+        <MasterTableView 
+            DataSourceID="sdsDB" ShowFooter="True" DataMember="DefaultView" 
+            GridLines="Horizontal" ShowHeadersWhenNoRecords="true">
+            <RowIndicatorColumn>
+                <HeaderStyle Width="20px"></HeaderStyle>
+            </RowIndicatorColumn>
+
+            <ExpandCollapseColumn>
+                <HeaderStyle Width="20px"></HeaderStyle>
+            </ExpandCollapseColumn>
+            <Columns>
+                <telerik:GridBoundColumn DataField="Description" HeaderText="Item Description" 
+                    UniqueName="ItemDescription" EmptyDataText="No Records to Display">
+                </telerik:GridBoundColumn>
+            </Columns>
+        </MasterTableView>
+
+        <FilterMenu>
+            <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+        </FilterMenu>
+    </telerik:RadGrid>
+    
+    
+    <asp:SqlDataSource ID="sdsDB" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:gforcetkdConnectionString1 %>" 
+        SelectCommand="usp_ViewCartItems" SelectCommandType="StoredProcedure" >
+        <SelectParameters>
+        <asp:SessionParameter  Name="sessionID" 
+            SessionField="MySessionID" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
+    
+    <asp:Label ID="lblError" runat="server" Text="lblError" Visible="false"></asp:Label>
+</asp:Content>
+

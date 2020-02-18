@@ -1,0 +1,15 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Classic Previous Winners" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="KCWinners.aspx.cs" Inherits="KCWinners"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div class="formPageHeader" style="width:900px">
+    Kansas City Classic Taekwondo Championships<br />
+    <span style="color:Black;">Previous Winners</span>
+</div>
+<div style="width:900px; text-align:center;">
+<br /><br /><br /><span style="font-style:italic; font-size:x-large">2010 Winners Coming Soon!</span>
+
+</div>
+</asp:Content>
+

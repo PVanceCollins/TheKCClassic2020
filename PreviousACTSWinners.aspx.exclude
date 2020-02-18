@@ -1,0 +1,69 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Previous ACTS Winners" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="PreviousACTSWinners.aspx.cs" Inherits="PreviousACTSWinners"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css"">
+    td
+    {
+    	padding:5px 15px 5px 15px;
+    	font-size:large;
+    	text-align:left;
+    	border-style:solid;
+    	border-color:Navy;
+    	border-width:1px;
+    }
+</style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <div class="formPageHeader" style="width:900px">
+    2008 A.C.T.S. Series Overall Winners
+</div>
+<div style="text-align:center; width:900px">
+ <table>
+     <tr>
+         <td>14-17</td>
+         <td>Sparring</td>
+         <td>Female</td>
+         <td>Katie Sievers</td>
+     </tr>
+     <tr>
+         <td>14-17</td>
+         <td>Sparring</td>
+         <td>Male</td>
+         <td>Brian Rodriguez and Thomas Hawkins</td>
+     </tr>
+     <tr>
+         <td>18-32</td>
+         <td>Sparring</td>
+         <td>Female</td>
+         <td>Nancy Archaumbalt</td>
+     </tr>
+     <tr>
+         <td>18-32</td>
+         <td>Sparring</td>
+         <td>Male</td>
+         <td>Ryan Hendershot, Jason Pak, and Emecca Anwanyu</td>
+     </tr>
+     <tr>
+         <td>14-17</td>
+         <td>Forms</td>
+         <td>Female</td>
+         <td>Alayna Alwan</td>
+     </tr>
+     <tr>
+         <td>14-17</td>
+         <td>Forms</td>
+         <td>Male</td>
+         <td>Daylan Ludemann</td>
+     </tr>
+     <tr>
+         <td>18-32</td>
+         <td>Forms</td>
+         <td>Female</td>
+         <td>Jan Yechout</td>
+     </tr>
+ </table>
+ <br /><br /><br />
+ </div>
+</asp:Content>
+

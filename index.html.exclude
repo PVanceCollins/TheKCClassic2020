@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>2014 Kansas City Classic</title>
+<!--<link href="_css/main.css" rel="stylesheet" type="text/css" />-->
+    <link href="FrontPageStyle.css" rel="stylesheet" />
+    <link href="KC_Style.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="header"> </div>
+  <div id="nav1"></div>
+  <div id="leftsidebar">
+    <div id="shirts"><a href="shirts.html" title="event shirts">EVENT SHIRTS</a></div>
+<div id="lunch"><a href="lunch.html" title="pre-paid lunch">PRE-PAID LUNCH</a></div>
+ <div id="trophies"><a href="trophies.html" title="trophies">TROPHIES</a></div>
+ </div>
+  <div id="mainContent">
+    <h1>The 33rd Annual <br />
+      <span class="redtext">Kansas City Classic April 25th, 2020</span><br />
+Blue Springs South High School </h1>
+    <h3>This year we have expanded the <strong class="italblue"><em>Grand Champion forms divisions</em></strong> to 16 Grand Champion Trophy winners. <strong class="italblue"><em>Everyone is a Winner</em></strong> at the Classic, everyone will receive the championship medal. We will divide the divisions to insure a fair participation for all participants. We will award first, second and third to all winners and all other participants will receive a bronze medal in each division.</h3>
+  </div>
+  <div id="rightsidebar">
+    <div id="directors">
+      <h4>Tournament Directors</h4>
+      <div id="photos">
+        <h5>Thank you for participating in the twenty-fift annual <span class="yellowtext">“<strong><em>Kansas City Classic</em></strong>”</span>. Whether you are a first time participant or one of many Classic veterans, we appreciate the fact that you have chosen our event. We will do our best to insure a great event that is highly organized, great hospitality and great competition. We would also like to thank the coaches, school owners, instructors and masters along with an outstanding referee team. We have 537 award divisions.<br />
+          <br />
+        </h5>
+        <h5>After the success of least year, the KC Classic will again be held at Blue Springs South High School.</h5>
+      </div>
+      <div id="photosg"><img src="_images/master_g.jpg" width="77" height="115" alt="Master G" /><br />
+      <img src="_images/mrs_g.jpg" width="77" height="115" alt="Mrs G" /></div>
+      <div id="g"></div>
+    </div>
+    <div id="highlight">
+      <h4>Competitor Spotlight: <span class="yellowtext">Sam Parkinson</span></h4>
+      <h5>I am a second Dan Black Belt and I have been in Tae Kwon Do for eleven years. When I was 14 I placed 2nd place at the AAU national championships and qualified for the AAU team trials and went on to earn a spot on the 2004/2005 national team. That year I went to Germany and represented the United States at the German Open. Since then I have qualified for the AAU national team trials every year. Last year I also placed 2nd at the USAT National championships. I continue my training in Tae Kwon Do daily and expect to achieve many more honors in the sport in the years to come. Apart from Tae Kwon Do, I am also very passionate about music and I play shows regularly. I have been blessed with the ability to play music and to have the opportunities I have had in Tae Kwon Do, and I try to thank God daily for that. <br />
+      </h5>
+    </div>
+  </div>
+  <div id="sponsors">
+    <div></div>
+    <div id="sponsorslogos">
+      <div align="center"></div>
+    </div>
+  </div>
+  <div id="spon"></div>
+  <div id="footer">
+    <h2><a href="http://www.usa-taekwondo.us"><img src="_images/USAtkd.gif" alt="USA TKD" width="137" height="58" border="0" /></a> <a href="http://www.aautaekwondo.org"><img src="_images/aau3.gif" alt="AAU" width="66" height="65" border="0" /></a> <img src="_images/KC_Classic_logo.gif" width="69" height="65" alt="Classic" /><img src="_images/Barcelona_92.gif" width="70" height="70" alt="Barcelona_92" /> <a href="http://www.gautreauxs.com"> <img src="_images/g_logo.gif" alt="G" width="64" height="66" border="0" /></a> <img src="_images/AMA_Logo_66x66.png" width="65" height="66" /> <a href="http://wtf.org"><img src="_images/WTF.gif" alt="WTF" width="147" height="72" border="0" /></a><span class="gray"><br />
+      ___________________________________________________________________________________________________________________________</span><br />
+    © Gautreaux's Martial Art Centers - gautreauxs.com - 816.229.6611</h2>
+  </div>
+</div>
+</body>
+</html>

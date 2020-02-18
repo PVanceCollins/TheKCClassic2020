@@ -1,0 +1,238 @@
+﻿
+#shirts {
+	padding: 0px;
+	height: 114px;
+	width: 170px;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#shirts a:link, #shirts a:visited {
+	background-image: url(images/event_t-shirts.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	height: 114px;
+	width: 170px;
+	color: #FFF;
+	line-height: 2em;
+	text-indent: 0.5em;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+}
+#shirts a:hover, #shirts a:active  {
+	background-image: url(images/event_t-shirts.jpg);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	height: 114px;
+	width: 170px;
+	position: relative;
+}
+#lunch  {
+	padding: 0px;
+	height: 114px;
+	width: 170px;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#lunch a:link, #lunch a:visited {
+	background-image: url(images/pre-payed_lunch.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	height: 114px;
+	width: 170px;
+	color: #FFF;
+	line-height: 2em;
+	text-indent: 0.5em;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+}
+#lunch a:hover, #lunch a:active {
+	background-image: url(images/pre-payed_lunch.jpg);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	height: 114px;
+	width: 170px;
+	position: relative;
+}
+#trophies  {
+	padding: 0px;
+	height: 114px;
+	width: 170px;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#trophies a:link, #trophies a:visited {
+	background-image: url(images/trophies.jpg);
+	background-position: left top;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	height: 114px;
+	width: 170px;
+	color: #FFF;
+	line-height: 2em;
+	text-indent: 0.5em;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+}
+#trophies a:hover, #trophies a:active {
+	background-image: url(images/trophies.jpg);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	height: 114px;
+	width: 170px;
+	position: relative;
+}
+
+
+
+#rightsidebar
+{
+	position:absolute;
+	left:585px;
+	width:315px;
+	top:-13px;
+	background-color:#282826;
+	height: 720px;
+	font-size:12px;
+	color:#F5F5F5;
+	
+}
+
+.rightHeading
+{
+	font-size:14px; 
+	font-weight:bold; 
+	text-align:center;
+	padding-bottom:5px;
+}
+
+#directors, #highlight
+{
+	padding:5px 8px 5px 8px;
+	text-align:justify; 
+}
+.photosg 
+{
+	clear: right;
+	float: right;
+	background-color: #000;
+	height: auto;
+	width: 77px;
+	margin: 5px;
+	margin-left:10px;
+}
+
+#highlightPhotoR, #highlightPhotoL
+{
+	background-color: #000;
+	height: auto;
+	width: 100px;
+	margin: 5px;
+	margin-right:10px;
+}	
+
+#highlightPhotoR
+{
+	clear: right;
+	float: right;
+}
+
+#highlightPhotoL
+{
+	float: left;
+	margin-top:5px;
+}
+ 
+
+
+#leftsidebar
+{
+	position:absolute;
+	top:-25px;
+	left:0px;
+	width:170px;
+	height: 540px;
+}
+
+
+#mainContent
+{
+	position:absolute;
+	/*left:190px;
+	width:380px;*/
+    left:50px;
+	width:800px;
+	top:-13px;
+	text-align:center;
+}
+
+#mainPageHeader
+{
+	font-size: 21px;
+	background-color:#282826;
+	color:#F5F5F5;
+	padding-bottom: 15px;
+}
+
+#mainPageText
+{
+	font-size: 14px;
+	text-align:justify;
+}
+
+.redtext
+{
+	color:Red;
+}
+
+.yellowtext
+{
+	color:Yellow;
+}
+
+.italblue
+{
+	color:Navy;
+	font-style:italic;
+}
+
+#footer
+{
+	position:absolute;
+	top:620px;
+	left: -1px;
+	width: 578px;
+}
+
+#footer td
+{
+	width:150px;
+	text-align:center;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+#footer > table
+{
+	width:100%;
+}

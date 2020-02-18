@@ -1,0 +1,21 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - HOME" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Home"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <div style="text-align:center; ">
+        <div style="font-size:large; text-align:center; width:900px">
+        <span style="font-weight:bold"><span style="font-size:larger; color:Red">“THE CLASSIC” </span><br />
+        KANSAS CITY CLASSIC TAEKWONDO CHAMPIONSHIPS  <br />
+            Apirl 25, 2020 </span>
+        <br /> <br />
+        <span style="text-decoration:underline;">NEW VENUE</span><br />
+        Blue Springs South High School <br />
+        1200 SE Adams Dairy Parkway <br />
+        Blue Springs, MO 64014 <br />
+        
+        </div>
+    </div>
+</asp:Content>
+

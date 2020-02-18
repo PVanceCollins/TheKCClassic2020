@@ -1,0 +1,389 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using DataCommunicator;
+
+public partial class Spectator : System.Web.UI.Page
+{
+    
+    CartItem itm;
+    EventSignUp sup;
+  
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //Response.Redirect("OnlineRegistraionExpired.aspx"); // Comment out during normal registration
+
+        if (!Page.IsPostBack)
+        {
+            //if (Session["MySessionID"] != null) // Sometimes if you reference a session key that does not exist it creates one with an empty string
+            //{
+            //    if (Session["MySessionID"].ToString().Length < 5) // Session numbers are long
+            //    {
+            //        Session.Add("MySessionID", Session.SessionID);
+            //    }
+            //}
+            //else
+            //{
+            //    if (!string.IsNullOrEmpty(Request.Cookies["MySessionID"].Value))
+            //    {
+            //        // the cookie already exists
+            //        Session.Add("MySessionID", Request.Cookies["MySessionID"].Value);
+            //        Response.Cookies["MySessionID"].Expires = DateTime.Now.AddDays(1);
+            //    }
+            //    else
+            //    {
+            //        Session.Add("MySessionID", Session.SessionID);
+            //        Response.Cookies["MySessionID"].Value = Session.SessionID;
+            //        Response.Cookies["MySessionID"].Expires = DateTime.Now.AddDays(1);
+            //    }
+            //}
+
+
+            if (Session["MySessionID"] != null) // Sometimes if you reference a session key that does not exist it creates one with an empty string
+            {
+                if (Session["MySessionID"].ToString().Length < 5) // Session numbers are long
+                {
+                    Session.Add("MySessionID", Session.SessionID);
+                }
+            }
+            else
+            {
+
+                if (Request.Cookies["MySessionID"] != null)
+                {
+                    // the cookie already exists
+                    Session.Add("MySessionID", Request.Cookies["MySessionID"].Value);
+                    Response.Cookies["MySessionID"].Expires = DateTime.Now.AddDays(1);
+                }
+                else
+                {
+                    Session.Add("MySessionID", Session.SessionID);
+                    Response.Cookies["MySessionID"].Value = Session.SessionID;
+                    Response.Cookies["MySessionID"].Expires = DateTime.Now.AddDays(1);
+                }
+            }
+
+            // easiest way to store these
+            
+            hdnEventID.Value = System.Configuration.ConfigurationManager.AppSettings["eventDatabaseID"].ToString();
+
+
+
+            hdnEventID.Value = "12";// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##################################  Warning, do not use this after 2016 ################################!!!!!!!!!!!!!!!!!!!!!!!!
+        }
+    }
+
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        Page.Validate();
+
+        if (Page.IsValid)
+        {
+            processButton();
+            Response.Redirect(@"~/Cart2.aspx?s=" + Session.SessionID, false);
+        }
+        else
+        {
+            valSummary.Visible = true;
+        }
+    }
+
+    private void processButton()
+    {
+        List<CartItem> itmArr = new List<CartItem>();
+        hdnContactID.Value = getContact();
+
+        try
+        {
+            if (txtAdultTix.Text != String.Empty)
+            {
+                if (int.Parse(txtAdultTix.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtAdultTix.Text); x++)
+                    {
+                        itmArr.Add(addItem(10, 33));
+                    }
+                }
+            }
+
+            if (txtKidTix.Text != String.Empty)
+            {
+                if (int.Parse(txtKidTix.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtKidTix.Text); x++)
+                    {
+                        itmArr.Add(addItem(8, 34));
+                    }
+                }
+            }
+
+            //if (txtAdultMeal.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtAdultMeal.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtAdultMeal.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(6, 24));
+            //        }
+            //    }
+            //}
+
+            //if (txtKidMeal.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtKidMeal.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtKidMeal.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(4, 23));
+            //        }
+            //    }
+            //}
+
+            if (txtTys.Text != String.Empty)
+            {
+                if (int.Parse(txtTys.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTys.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 37));
+                    }
+                }
+            }
+
+            //if (txtTysB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTysB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTysB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 40));
+            //        }
+            //    }
+            //}
+
+            if (txtTym.Text != String.Empty)
+            {
+                if (int.Parse(txtTym.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTym.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 38));
+                    }
+                }
+            }
+            //if (txtTymB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTymB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTymB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 41));
+            //        }
+            //    }
+            //}
+
+            if (txtTyl.Text != String.Empty)
+            {
+                if (int.Parse(txtTyl.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTyl.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 39));
+                    }
+                }
+            }
+            //if (txtTylB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTylB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTylB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 42));
+            //        }
+            //    }
+            //}
+
+            if (txtTs.Text != String.Empty)
+            {
+                if (int.Parse(txtTs.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTs.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 28));
+                    }
+                }
+            }
+            //if (txtTsB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTsB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTsB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 43));
+            //        }
+            //    }
+            //}
+
+            if (txtTm.Text != String.Empty)
+            {
+                if (int.Parse(txtTm.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTm.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 29));
+                    }
+                }
+            }
+            //if (txtTmB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTmB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTmB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 44));
+            //        }
+            //    }
+            //}
+
+            if (txtTl.Text != String.Empty)
+            {
+                if (int.Parse(txtTl.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTl.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 30));
+                    }
+                }
+            }
+            //if (txtTlB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTlB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTlB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 45));
+            //        }
+            //    }
+            //}
+
+            if (txtTxl.Text != String.Empty)
+            {
+                if (int.Parse(txtTxl.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTxl.Text); x++)
+                    {
+                        itmArr.Add(addItem(15, 31));
+                    }
+                }
+            }
+            //if (txtTxlB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTxlB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTxlB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(15, 46));
+            //        }
+            //    }
+            //}
+
+            if (txtTxxl.Text != String.Empty)
+            {
+                if (int.Parse(txtTxxl.Text) > 0) // we are safe here because the control forces a number
+                {
+                    for (int x = 0; x < int.Parse(txtTxxl.Text); x++)
+                    {
+                        itmArr.Add(addItem(18, 32));
+                    }
+                }
+            }
+            //if (txtTxxlB.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTxxlB.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTxxlB.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(18, 47));
+            //        }
+            //    }
+            //}
+
+            //if (txtTxxl.Text != String.Empty)
+            //{
+            //    if (int.Parse(txtTxxxl.Text) > 0) // we are safe here because the control forces a number
+            //    {
+            //        for (int x = 0; x < int.Parse(txtTxxl.Text); x++)
+            //        {
+            //            itmArr.Add(addItem(18, 35));
+            //        }
+            //    }
+            //}
+
+
+            
+            // Add items to shopping cart
+            int rezCart = 0;
+            foreach (CartItem i in itmArr)
+            {
+                rezCart = i.addCartItem();
+            } 
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    private CartItem addItem(int cost, int category)
+    {
+        try
+        {
+            sup = new EventSignUp();
+            sup.EventCategoryTypeID = category;
+            sup.ContactID = int.Parse(hdnContactID.Value);
+            sup.EventID = int.Parse(hdnEventID.Value);
+            int rez = sup.addEventSignUp();
+
+            itm = new CartItem();
+            itm.itemCost = cost;
+            itm.EventSignUpID = rez;
+            itm.StrSessionID = Session["MySessionID"].ToString();
+
+            return itm;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        
+    }
+
+    private String getContact()
+    {
+        int contID = 0;
+
+        try
+        {
+            DataCommunicator.ContactItem contact = new ContactItem();
+            contact.Email = txtEmail.Text;
+            contact.FName = txtFName.Text;
+            contact.LName = txtLName.Text;
+            contID = contact.addContact(); // get contactID from DB
+        }
+        catch (Exception)
+        {
+        }
+
+        return contID.ToString();
+    }
+}

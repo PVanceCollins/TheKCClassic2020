@@ -1,0 +1,86 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Shopping Cart" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Cart.aspx.cs" Inherits="Cart"  %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <br />
+<%--<p style="font-weight:bold;">
+    You may enroll multiple competitors/coaches with one session. If you complete a transaction and decide to enroll another, please close your <br />browser then open a new browser window.
+</p>--%>
+<br />
+    <telerik:RadGrid 
+        ID="grdCartItems" 
+        runat="server" 
+        OnItemDataBound="grdCartItems_ItemDataBound" 
+        OnSelectedIndexChanged="grdCartItems_SelectedIndexChanged" 
+        OnItemCommand="grdCartItems_ItemCommand" 
+        BorderColor="Black" 
+        BorderWidth="1px" 
+        AllowAutomaticDeletes="True" 
+        GridLines="Horizontal" 
+        DataSourceID="sdsDB" 
+        Width="775px" 
+        AutoGenerateColumns="False" 
+        OnItemDeleted="grdCartItems_ItemDeleted" 
+        OnNeedDataSource="grdCartItems_NeedDataSource" 
+        DataMember="DefaultView">
+        <HeaderContextMenu>
+        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+            </HeaderContextMenu>
+
+            <MasterTableView 
+                DataSourceID="sdsDB" ShowFooter="True" DataMember="DefaultView" DataKeyNames="cartID" 
+                GridLines="Horizontal" ShowHeadersWhenNoRecords="true">
+                <RowIndicatorColumn>
+                <HeaderStyle Width="20px"></HeaderStyle>
+                </RowIndicatorColumn>
+
+                <ExpandCollapseColumn>
+                <HeaderStyle Width="20px"></HeaderStyle>
+                </ExpandCollapseColumn>
+                <Columns>
+                    <telerik:GridButtonColumn Text="Delete" UniqueName="column" CommandName="delete" >
+                    </telerik:GridButtonColumn>
+                    <telerik:GridBoundColumn DataField="cartID" HeaderText="Item ID" 
+                        UniqueName="cartID">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="Description" HeaderText="Item Description" 
+                        UniqueName="ItemDescription" EmptyDataText="No Records to Display">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn Aggregate="Sum" DataField="cost" HeaderText="Price" UniqueName="cost" 
+                        FooterAggregateFormatString="$###,###.##" ColumnEditorID="cost" >
+                    </telerik:GridBoundColumn>
+                </Columns>
+            </MasterTableView>
+
+            <FilterMenu>
+                <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+            </FilterMenu>
+    </telerik:RadGrid>
+    
+    
+    <asp:SqlDataSource ID="sdsDB" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:gforcetkdConnectionString1 %>" 
+        SelectCommand="usp_ViewCartItems" SelectCommandType="StoredProcedure" 
+        DeleteCommand="usp_DeleteCartItem" DeleteCommandType="StoredProcedure">
+        <SelectParameters>
+            <asp:SessionParameter  Name="sessionID" 
+                SessionField="MySessionID" Type="String" />
+        </SelectParameters>
+        <DeleteParameters>
+ <%--       <asp:ControlParameter ControlID="cartID" Type="Int32" Name="cartID" />
+            <asp:SessionParameter Name="CurrentCartItem" SessionField="CurrentCartItem" Type="String" />--%>
+        
+            <asp:Parameter Name="cartID" Type="Int32" />
+        </DeleteParameters>
+    </asp:SqlDataSource>
+    
+
+       <asp:Button ID="btn" runat="server" Text="Complete Registration"></asp:Button>
+
+</asp:Content>
+
+
+

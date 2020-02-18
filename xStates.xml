@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item Text="ALABAMA" Value="AL" />
+  <Item Text="ALASKA" Value="AK" />
+  <Item Text="ARIZON" Value="AZ" />
+  <Item Text="ARKANSAS" Value="AR" />
+  <Item Text="CALIFORNIA" Value="CA" />
+  <Item Text="COLORADO" Value="CO" />
+  <Item Text="CONNECTICUT" Value="CT" />
+  <Item Text="DELAWARE" Value="DE" />
+  <Item Text="DISTRICT OF COLUMBIA" Value="DC" />
+  <Item Text="FLORIDA" Value="FL" />
+  <Item Text="GEORGIA" Value="GA" />
+  <Item Text="GUAM" Value="GU" />
+  <Item Text="HAWAII" Value="HI" />
+  <Item Text="IDAHO" Value="ID" />
+  <Item Text="ILLINOIS" Value="IL" />
+  <Item Text="INDIANA" Value="IN" />
+  <Item Text="IOWA" Value="IA" />
+  <Item Text="KANSAS" Value="KS" />
+  <Item Text="KENTUCKY" Value="KY" />
+  <Item Text="LOUISIANA" Value="LA" />
+  <Item Text="MAINE" Value="ME" />
+  <Item Text="MARYLAND" Value="MD" />
+  <Item Text="MASSACHUSETTS" Value="MA" />
+  <Item Text="MICHIGAN" Value="MI" />
+  <Item Text="MINNESOTA" Value="MN" />
+  <Item Text="MISSISSIPPI" Value="MS" />
+  <Item Text="MISSOURI" Value="MO" />
+  <Item Text="MONTANA" Value="MT" />
+  <Item Text="NEBRASKA" Value="NE" />
+  <Item Text="NEVADA" Value="NV" />
+  <Item Text="NEW HAMPSHIR" Value="NH" />
+  <Item Text="NEW JERSE" Value="NJ" />
+  <Item Text="NEW MEXIC" Value="NM" />
+  <Item Text="NEW YORK" Value="NY" />
+  <Item Text="NORTH CAROLINA" Value="NC" />
+  <Item Text="NORTH DAKOTA" Value="ND" />
+  <Item Text="OHIO" Value="OH" />
+  <Item Text="OKLAHOMA" Value="OK" />
+  <Item Text="OREGON " Value="OR" />
+  <Item Text="PENNSYLVANIA" Value="PA" />
+  <Item Text="PUERTO RICO" Value="PR" />
+  <Item Text="RHODE ISLAND" Value="RI" />
+  <Item Text="SOUTH CAROLIN" Value="SC" />
+  <Item Text="SOUTH DAKOT" Value="SD" />
+  <Item Text="TENNESSEE" Value="TN" />
+  <Item Text="TEXAS" Value="TX" />
+  <Item Text="UTAH" Value="UT" />
+  <Item Text="VERMONT" Value="VT" />
+  <Item Text="VIRGINIA" Value="VA" />
+  <Item Text="WASHINGTON" Value="WA" />
+  <Item Text="WEST VIRGINIA" Value="WV" />
+  <Item Text="WISCONSIN" Value="WI" />
+  <Item Text="WYOMING" Value="WY" />
+</Items>
+
+
+
+
+

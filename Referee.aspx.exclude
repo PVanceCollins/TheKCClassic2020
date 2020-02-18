@@ -1,0 +1,125 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Referee Registration" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Referee.aspx.cs" Inherits="Referee" %>
+<%@ Register assembly="Telerik.Web.UI" namespace="Telerik.Web.UI" tagprefix="telerik" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+    <div class="formPageHeader">
+        Referee Registration<br />
+    </div>
+
+    <div style="width:898px">
+    <span>
+            The Kansas City Classic Organizing Committee would like to Thank You in advance again for your support and dedication which 
+            makes this event a success every year!! We will have our courtesy room full of the best refreshments during the entire event. 
+            Additionally, as our way of saying thanks, all ACTS Referees that referee a full day will receive a 2020 ACTS embroidered polo 
+            shirt and an expense stipend. In order to receive the referee polo shirt and the stipend, you must complete this Referee Registration 
+            form by 
+        April 13th and referee the full day. Please wear khaki slacks and comfortable shoes.
+            <br /><br />
+            Explanation of Rules and Scoring will begin at 8:30am the day of competition. All Instructors, Officials and Coaches must attend this 
+            meeting in order to understand judging procedures and become appraised of the rules. Credentials will be distributed 
+            during this meeting.
+            <br /><br />
+            We ask all school owners and/or Instructors to provide one full day officials. Thank you!
+        </span>
+    </div>
+    <div style="text-align:center; padding-top:25px; width:850px;" >
+        <asp:Table ID="tblFormElements" runat="server">
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label15" runat="server" Text="First Name" class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtFName" runat="server" Width="239px" EmptyMessage="First Name Required" EmptyMessageStyle-ForeColor="Red" eValidationGroup="validGroup"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label16" runat="server" Text="Last Name" class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtLName" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label17" runat="server" Text="Mailing Address"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="5"><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="txtAddress" runat="server" Width="720px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label18" runat="server" Text="City"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell><telerik:RadMaskedTextBox  MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="txtCity" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label19" runat="server" Text="State"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell HorizontalAlign="Left">    
+                    <telerik:RadComboBox ID="ddlStates" Runat="server" FocusedStyle-BorderColor="#F00000" >
+                        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+                    </telerik:RadComboBox>
+                </asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label20" runat="server" Text="Zip"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell><telerik:RadMaskedTextBox  Mask="#####-####" FocusedStyle-BorderColor="#F00000" ID="txtZip" runat="server" Width="70px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label21" runat="server" Text="Phone"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox Mask="(###) ###-####" FocusedStyle-BorderColor="#F00000" ID="txtPhone" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label  ID="Label22" runat="server" Text="Email Address"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox  MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="txtEmail" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label23" runat="server" Text="Rank"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell HorizontalAlign="Left">
+                    <telerik:RadComboBox ID="ddlRank" Runat="server" FocusedStyle-BorderColor="#F00000" >
+                        <CollapseAnimation Type="OutQuint" Duration="200"></CollapseAnimation>
+                        <Items>
+                            <telerik:RadComboBoxItem Text="N/A" Value="none" />
+                            <telerik:RadComboBoxItem Text="Junior/Tiger" Value="tot" />
+                            <telerik:RadComboBoxItem Text="White" Value="white" />
+                            <telerik:RadComboBoxItem Text="Yellow" Value="yellow" />
+                            <telerik:RadComboBoxItem Text="Gold" Value="gold" />
+                            <telerik:RadComboBoxItem Text="Orange" Value="orange" />
+                            <telerik:RadComboBoxItem Text="Green" Value="green" />
+                            <telerik:RadComboBoxItem Text="Blue" Value="blue" />
+                            <telerik:RadComboBoxItem Text="Purple" Value="purple" />
+                            <telerik:RadComboBoxItem Text="Brown" Value="brown" />
+                            <telerik:RadComboBoxItem Text="Red" Value="red" />
+                            <telerik:RadComboBoxItem Text="BB Recommended" Value="black" />
+                            <telerik:RadComboBoxItem Text="1st Dan" Value="dan1" />
+                            <telerik:RadComboBoxItem Text="2nd Dan or Higher" Value="dan2" />
+                        </Items>
+                    </telerik:RadComboBox>
+                </asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label24" runat="server" Text="Referee Cert.Level"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="TextBox10" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label25" runat="server" Text="School"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox  MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox11" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label26" runat="server" Text="Instructor's Name"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="25" FocusedStyle-BorderColor="#F00000" ID="TextBox12" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow CssClass="formRow">
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label27" runat="server" Text="Instructor's Website"  class="formLabel"></asp:Label></asp:TableCell>             
+                <asp:TableCell><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox13" runat="server" Width="237px"></telerik:RadMaskedTextBox></asp:TableCell>
+                <asp:TableCell CssClass="formLabel"><asp:Label ID="Label28" runat="server" Text="Instructor's Email"  class="formLabel"></asp:Label></asp:TableCell>
+                <asp:TableCell ColumnSpan="3"><telerik:RadMaskedTextBox MaxLength="50" FocusedStyle-BorderColor="#F00000" ID="TextBox14" runat="server" Width="308px"></telerik:RadMaskedTextBox></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </div>
+    <br />
+    <div class="formWaiver">
+        <div class="formWaiverHeader">Liability Waiver and Conduct Agreement
+        </div>
+        <div class="formWaiverText">
+            In consideration of your acceptance of my entry, I do hereby WAIVE and RELEASE, for myself, my heirs, executors and
+            administrators, any claim I may make against the Kansas City Classic Taekwondo Championships, Gautreaux’s Martial Art Centers, Inc, ACTS, Blue Springs South High School, 
+            Blue Springs R IV School District, the City of Blue Springs, the sponsors, directors, volunteers and competitors for any and all damages which may be sustained by me in 
+            connection with my association with or entry in the above athletic meet, or which may arise out of traveling to, participating in and returning from this athletic meet. 
+            I understand that Taekwondo is a body-contact sport which involves a risk of injury. I understand all the contents of the rules and general information published by the
+             sponsors and I agree with them in their entirety. I fully understand that any medical treatment I receive will be of the “first Aid” type only. In addition, I consent 
+             that any pictures taken of me in connection with this event can be used for publicity, etc. and I waive compensation in regard hereto.
+         <br /><br />
+        </div>
+    </div>
+    <div class="formAgreeLine">
+             <br /><br />
+                <asp:Label ID="Label1" runat="server" CssClass="formAgreeLine" Text="I state that by submitting this form I agree to the considerations above:"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnSubmit" runat="server" Text="Submit Registration" />
+    </div>
+    <br /><br />
+        
+    
+</asp:Content>
+
+

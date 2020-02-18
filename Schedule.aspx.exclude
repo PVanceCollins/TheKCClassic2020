@@ -1,0 +1,67 @@
+﻿<%@ Page Language="C#" Title="The KC Classic TaeKwonDo Championship - Schedule" MasterPageFile="~/ClassicMaster.master" AutoEventWireup="true" CodeFile="Schedule.aspx.cs" Inherits="Schedule"  %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>The KC Classic - Schedule of Events</title>
+    
+    <style type="text/css" >
+    .scheduleTime
+    {
+	    font-weight:bold; 
+	    width:150px;
+	    text-align:left;
+	    padding-bottom: 10px;
+	    vertical-align:top;
+    }
+    .scheduleDetail
+    {
+    	 padding-bottom: 10px;
+    	 vertical-align:top;
+    }
+    .style1
+    {
+        text-decoration: underline;
+    }
+    </style>
+    
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+
+<div style="font-size:16px; width:895px;">
+  <p align="center"><font color="#B97034" size="3" face="Verdana"><b>“<u>The 
+Classic</u>”</b></font></p>
+<p align="center"><font size="3" face="Verdana"><b><u>Schedule of Events</u></b></font></p>
+<p><font size="3" face="Verdana"><b><u>Friday, May 30</u></b><sup><b><u>th</u></b></sup></font></p>
+<p><font size="3" face="Verdana"><strong>5 - 9:00pm</strong>&nbsp;&nbsp;&nbsp;&nbsp; 
+    Credential pick-up and Black Belt weigh-in for Award Divisions at Gautreaux’s 
+    Martial Arts</font></p>
+    <p style="margin-left: 40px"><font size="3" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Center, 2905 SW US Highway 40, Blue Springs, Mo 64015, 816.229.6611. </font><br></p>
+
+<%--Credential pick-up and Black Belt weigh-in for Award Divisions at Blue Springs South High
+School, 1200 SE Adams Dairy Pkwy, Blue Springs, MO 64014--%>
+<p><font size="3" face="Verdana"><b><u>Saturday, May 31</u></b><sup><b><u>th</u></b></sup><b>:<u> </u></b></font> <br>
+</p>
+<p><font size="3" face="Verdana"><strong>8 - 9:00am</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Credential pick-up and Black Belt weigh-in for Award Divisions at Delta Woods      </font></p>
+    <p style="margin-left: 120px"><font size="3" face="Verdana">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Middle School, 4401 NE Lakewood Way, Lee's Summit, MO 64064</font></p>
+<p><font size="3" face="Verdana"><strong>8:30am</strong>      <b>&nbsp;&nbsp;&nbsp;&nbsp; </b>Coaches and Officials meeting and <strong>Coach 
+    credential pick-up</strong></font></p>
+<p><font size="3" face="Verdana"><strong>9:00am</strong>     &nbsp;&nbsp;&nbsp;&nbsp; 
+    <span class="style1"><strong>Big Gym / Small Gym</strong></span> </font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Black Belt Forms age 12 &amp; older 
+    / Black Belt Forms age 11 &amp; younger</font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Color Belt Forms age 12 &amp; older 
+    / Color Belt Forms age 11 &amp; younger </font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Weapon Forms 
+    / Sparring age 8 &amp; younger </font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Grand Champion Forms 
+    / Sparring age 9-11 </font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Sparring age 12 & older </font></p>
+<p><font size="3" face="Verdana">                &nbsp;&nbsp;&nbsp;&nbsp; Black Belt sparring age 14 & older</font></p>
+
+
+
+</div>
+</asp:Content>
+
